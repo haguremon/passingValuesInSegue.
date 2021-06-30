@@ -23,10 +23,11 @@ class ViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         passingTextField.endEditing(true)
     }
+    //遷移する前に呼ばれるメソッド
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toPassingValueSegue" {
-            let passinfValue = segue.destination as! PassingValueViewController
-            passinfValue.valueText = passingTextField.text ?? ""
+        if segue.identifier == "toPassingValueSegue" { //segue.identifierがtoPassingValueSegueの時に
+            let passinfValue = segue.destination as! PassingValueViewController //ダウンキャストしてる元々はUIViewController
+            passinfValue.valueText = passingTextField.text ?? "" //passinfValueはPassingValueViewControllerなのでvalueTextプロパティを使うことができる
         }
     }
     
