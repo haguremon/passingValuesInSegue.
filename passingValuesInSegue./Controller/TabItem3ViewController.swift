@@ -8,11 +8,15 @@
 import UIKit
 
 class TabItem3ViewController: UIViewController {
-
+    var passingitem3Label = ""
+    
+    @IBOutlet weak var item3Label: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        item3Label.text = passingitem3Label
     }
     
 
